@@ -1,4 +1,28 @@
 <script>
-window.opener = self
-window.close()
+  // below will attempt to close if possible 
+  function closing() {
+    window.close(self);
+    window.close('', '_parent', '');
+    window.close('', '_self', '');
+    // After several attempts will let the User know
+    // below, will display a Full Screen Div with a Message for the User
+    document.getElementById("msgDiv").style.display = 'block';
+    // below, will Hide your Current Page Div to allow only the Previous Message
+    document.getElementById("currentPage").style.display = 'none';
+    // Below a timer to reload 
+    setTimeout(function() {
+      document.location.reload(true);
+    }, 3000);
+  }
 </script>
+
+
+<!-- Below is the Message for the User -->
+<div align="center" id="msgDiv" style="display:none;width:100%;height:100vh">
+  <h1><br>Unable to close Tab/Window.<br><br>Please Close Tab/Window Manually in the Browser.<br><br>Thanks.<br><br><button style="cursor:pointer" onclick='document.location.reload(true);'>Reload</button></h1>
+</div>
+<!-- Below is the Current Page -->
+<div id="currentPage" style="display:block;">
+  <div style="position: absolute; right:1%; top: 2px; height: 22px; width: 30px; padding: 0em;" title="EXIT">
+    <a href="#" onclick="closing()" style="cursor:pointer;text-decoration: underline;font-weight:900; background: tomato; border: 4px outset red; border-radius: 4px;">&times;</a></div>
+</div>
