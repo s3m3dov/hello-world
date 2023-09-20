@@ -1,6 +1,6 @@
 <script>
   // below will attempt to close if possible 
-  function close() {
+  function closeWindow() {
     window.close(self);
     window.close('', '_parent', '');
     window.close('', '_self', '');
@@ -15,7 +15,7 @@
 </script>
 
 
-<body onload="close()">
+<body onload="closeWindow()">
   <!-- Rest of your HTML code -->
   <!-- Below is the Message for the User -->
   <div align="center" id="msgDiv" style="display:none;width:100%;height:100vh">
