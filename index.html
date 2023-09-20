@@ -7,8 +7,6 @@
     // After several attempts will let the User know
     // below, will display a Full Screen Div with a Message for the User
     document.getElementById("msgDiv").style.display = 'block';
-    // below, will Hide your Current Page Div to allow only the Previous Message
-    document.getElementById("currentPage").style.display = 'none';
     // Below a timer to reload 
     setTimeout(function() {
       document.location.reload(true);
@@ -19,11 +17,8 @@
 
 <body onload="close()">
   <!-- Rest of your HTML code -->
+  <!-- Below is the Message for the User -->
+  <div align="center" id="msgDiv" style="display:none;width:100%;height:100vh">
+    <h2><br>Success!<br><br>Please Close Tab/Window in the Browser.<br></h2>
+  </div>
 </body>
-
-
-<!-- Below is the Message for the User -->
-<div align="center" id="msgDiv" style="display:none;width:100%;height:100vh">
-  <h2><br>Success!<br><br>Please Close Tab/Window in the Browser.<br></h2>
-</div>
-
