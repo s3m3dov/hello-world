@@ -1,15 +1,4 @@
-<button onclick="myFunction()">Close</button>
 <script>
-if (location.href.indexOf("#") == -1) {
-    window.open(location.href + "#", "_self")
-}
-
-function myFunction() {
-  try {
-    window.close()
-  } catch (err) {
-    window.open(location.href.substring(0, location.href.indexOf("?")).substring(0, location.href.indexOf("#")) + "#", "_self")
-    window.close()
-  }
-}
+window.opener = self
+window.close()
 </script>
