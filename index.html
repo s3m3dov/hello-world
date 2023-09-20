@@ -1,9 +1,12 @@
-<script>
+<script type="text/javascript">
   // below will attempt to close if possible 
   function closeWindow() {
     window.close(self);
     window.close('', '_parent', '');
     window.close('', '_self', '');
+    if (document.referrer.includes('telegram')) {
+      window.location.href = "tg:resolve";
+    }
     // After several attempts will let the User know
     // below, will display a Full Screen Div with a Message for the User
     document.getElementById("msgDiv").style.display = 'block';
